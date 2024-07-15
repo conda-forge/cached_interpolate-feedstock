@@ -10,7 +10,7 @@ source:
   sha256: 029ecd2da91f127694673504574fb626f987a3145b2edc94dfcff706aa1c7aee
 
 build:
-  skip: true  # [py<310]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -23,7 +23,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy >=2                              # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
@@ -42,8 +42,11 @@ test:
     - cached_interpolate.build
   commands:
     - pip check
+    - pytest --pyargs cached_interpolate.test
   requires:
     - pip
+    - pytest
+    - scipy
 
 about:
   home: https://github.com/ColmTalbot/cached_interpolation
