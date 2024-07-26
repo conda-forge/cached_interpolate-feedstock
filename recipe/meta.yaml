@@ -10,7 +10,7 @@ source:
   sha256: a9320293a3106f11d2356657b89060863180d7fa600bd82112791e8aabc3a1c0
 
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<39 or python_impl == 'pypy']
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -48,7 +48,7 @@ test:
     - pip
     - pytest
     - scipy
-    - jax                                    # [python_impl == 'cpython']
+    - jax                                    # [python_impl == 'cpython' and target_platform == "linux-64"]
 
 about:
   home: https://github.com/ColmTalbot/cached_interpolation
