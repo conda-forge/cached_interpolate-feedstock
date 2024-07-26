@@ -48,7 +48,7 @@ test:
     - pip
     - pytest
     - scipy
-    - jax
+    - jax                                    # [python_impl == 'cpython']
 
 about:
   home: https://github.com/ColmTalbot/cached_interpolation
