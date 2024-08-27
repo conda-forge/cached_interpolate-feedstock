@@ -1,5 +1,5 @@
 {% set name = "cached_interpolate" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cached_interpolate-{{ version }}.tar.gz
-  sha256: a9320293a3106f11d2356657b89060863180d7fa600bd82112791e8aabc3a1c0
+  sha256: 2d66a79d060a891cf8f092c480a1ddd73e02677251e04961cb72e9dc7ef60555
 
 build:
-  skip: true  # [py<39 or python_impl == 'pypy']
+  skip: true  # [py<310 or python_impl == 'pypy']
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
