@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cached_interpolate-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cached_interpolate-{{ version }}.tar.gz
   sha256: e03d06621554a9aa2b5d2be2c061856e6eb2eafb1d437ec408c198e43d027db1
 
 build:
